@@ -1,6 +1,6 @@
 require "net/http"
 require "open-uri"
-require "json"
+require "json" #required to convert the response.body JSON into a Ruby Hash or Array
 
 class GetRequester
 
@@ -16,6 +16,6 @@ class GetRequester
     end
 
     def parse_json
-        data = JSON.parse(self.get_response_body)
+        JSON.parse(get_response_body)
     end
 end
